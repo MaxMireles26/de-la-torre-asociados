@@ -982,7 +982,7 @@ section[id] { scroll-margin-top: 5.5rem; }
   body.menu-open { overflow: hidden; }
   .hero { padding-inline: 1.25rem; }
   .hero::before { inset: .65rem; }
-  .brand-logo { width: 96vw; }
+  .brand-logo { width: 88vw; }
   .hero__eyebrow { max-width: 18rem; margin-inline: auto; font-size: .65rem; line-height: 1.7; letter-spacing: .2em; }
   .scroll-cue { width: max-content; }
   .display-title { font-size: clamp(3.1rem,16vw,4.7rem); }
