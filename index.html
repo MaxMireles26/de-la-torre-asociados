@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
     <script>document.documentElement.classList.add("js");</script>
-    <link rel="stylesheet" href="style.css?v=20260910-2" />
+    <link rel="stylesheet" href="style.css?v=20260927-1" />
   </head>
   <body>
     <header class="site-header" aria-label="Navegación principal">
@@ -186,18 +186,63 @@
             <p class="location__intro reveal reveal--delay">Un entorno privado y profesional para escuchar su caso con la atención que merece.</p>
           </div>
 
-          <div class="office-gallery" aria-label="Espacios reservados para fotografías del despacho">
-            <div class="photo-placeholder photo-placeholder--main reveal" role="img" aria-label="Espacio para fotografía de la fachada del despacho">
-              <i data-lucide="image" aria-hidden="true"></i>
-              <span>Fotografía 01</span><small>Fachada del despacho</small>
+          <div class="office-carousel reveal" role="region" aria-roledescription="carrusel" aria-label="Galería fotográfica del despacho" tabindex="0">
+            <div class="office-carousel__header">
+              <div>
+                <p class="office-carousel__eyebrow">El despacho</p>
+                <p class="office-carousel__description">Espacios pensados para conversar, analizar y construir soluciones con absoluta privacidad.</p>
+              </div>
+              <p class="office-carousel__counter" aria-hidden="true"><span data-carousel-current>01</span><i></i><span>07</span></p>
             </div>
-            <div class="photo-placeholder reveal reveal--delay" role="img" aria-label="Espacio para fotografía de la recepción">
-              <i data-lucide="image" aria-hidden="true"></i>
-              <span>Fotografía 02</span><small>Recepción</small>
+
+            <div class="office-carousel__viewport">
+              <div class="office-carousel__track" data-carousel-track>
+                <figure class="office-slide is-active" data-carousel-slide>
+                  <img src="assets/office-01.jpg?v=20260927-1" alt="Vestíbulo del despacho con escultura contemporánea y vista al jardín" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>01</span><p>Recepción y galería</p></figcaption>
+                </figure>
+                <figure class="office-slide" data-carousel-slide>
+                  <img src="assets/office-02.jpg?v=20260927-1" alt="Sala de juntas del despacho iluminada por luz natural" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>02</span><p>Sala de juntas</p></figcaption>
+                </figure>
+                <figure class="office-slide" data-carousel-slide>
+                  <img src="assets/office-03.jpg?v=20260927-1" alt="Área de atención privada con mobiliario y obras de arte" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>03</span><p>Área de atención</p></figcaption>
+                </figure>
+                <figure class="office-slide" data-carousel-slide>
+                  <img src="assets/office-04.jpg?v=20260927-1" alt="Vestíbulo principal con escultura roja y acceso al jardín" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>04</span><p>Vestíbulo principal</p></figcaption>
+                </figure>
+                <figure class="office-slide" data-carousel-slide>
+                  <img src="assets/office-05.jpg?v=20260927-1" alt="Mesa de reuniones del despacho con detalles escultóricos" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>05</span><p>Espacio de acuerdos</p></figcaption>
+                </figure>
+                <figure class="office-slide" data-carousel-slide>
+                  <img src="assets/office-06.jpg?v=20260927-1" alt="Sala de juntas con mesa de madera y luz cálida" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>06</span><p>Sala de análisis</p></figcaption>
+                </figure>
+                <figure class="office-slide" data-carousel-slide>
+                  <img src="assets/office-07.jpg?v=20260927-1" alt="Oficina privada del despacho con arte y piano" width="1200" height="1600" loading="lazy" decoding="async" />
+                  <figcaption><span>07</span><p>Oficina privada</p></figcaption>
+                </figure>
+              </div>
             </div>
-            <div class="photo-placeholder reveal reveal--delay-2" role="img" aria-label="Espacio para fotografía de la sala de juntas">
-              <i data-lucide="image" aria-hidden="true"></i>
-              <span>Fotografía 03</span><small>Sala de juntas</small>
+
+            <div class="office-carousel__footer">
+              <div class="office-carousel__controls">
+                <button type="button" data-carousel-prev aria-label="Fotografía anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+                <button type="button" data-carousel-next aria-label="Fotografía siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+              </div>
+              <div class="office-carousel__dots" aria-label="Seleccionar fotografía">
+                <button class="is-active" type="button" data-carousel-dot="0" aria-label="Ver fotografía 1" aria-current="true"></button>
+                <button type="button" data-carousel-dot="1" aria-label="Ver fotografía 2"></button>
+                <button type="button" data-carousel-dot="2" aria-label="Ver fotografía 3"></button>
+                <button type="button" data-carousel-dot="3" aria-label="Ver fotografía 4"></button>
+                <button type="button" data-carousel-dot="4" aria-label="Ver fotografía 5"></button>
+                <button type="button" data-carousel-dot="5" aria-label="Ver fotografía 6"></button>
+                <button type="button" data-carousel-dot="6" aria-label="Ver fotografía 7"></button>
+              </div>
+              <div class="office-carousel__progress" aria-hidden="true"><span data-carousel-progress></span></div>
             </div>
           </div>
 
@@ -333,6 +378,90 @@
       window.addEventListener("resize", () => {
         if (window.innerWidth > 640) closeMenu();
       });
+
+      const carousel = document.querySelector(".office-carousel");
+      if (carousel) {
+        const track = carousel.querySelector("[data-carousel-track]");
+        const viewport = carousel.querySelector(".office-carousel__viewport");
+        const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+        const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+        const currentLabel = carousel.querySelector("[data-carousel-current]");
+        const progress = carousel.querySelector("[data-carousel-progress]");
+        const previousButton = carousel.querySelector("[data-carousel-prev]");
+        const nextButton = carousel.querySelector("[data-carousel-next]");
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let currentSlide = 0;
+        let autoplayDirection = 1;
+        let autoplayTimer;
+        let pointerStartX = null;
+        let carouselIsVisible = false;
+
+        const positionCarousel = () => {
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+          const requestedOffset = currentSlide * (slideWidth + gap);
+          const maximumOffset = Math.max(0, track.scrollWidth - viewport.clientWidth);
+          track.style.transform = `translate3d(-${Math.min(requestedOffset, maximumOffset)}px, 0, 0)`;
+        };
+
+        const showSlide = (index) => {
+          currentSlide = (index + slides.length) % slides.length;
+          slides.forEach((slide, slideIndex) => slide.classList.toggle("is-active", slideIndex === currentSlide));
+          dots.forEach((dot, dotIndex) => {
+            const isCurrent = dotIndex === currentSlide;
+            dot.classList.toggle("is-active", isCurrent);
+            if (isCurrent) dot.setAttribute("aria-current", "true");
+            else dot.removeAttribute("aria-current");
+          });
+          currentLabel.textContent = String(currentSlide + 1).padStart(2, "0");
+          progress.style.transform = `scaleX(${(currentSlide + 1) / slides.length})`;
+          positionCarousel();
+        };
+
+        const stopAutoplay = () => window.clearInterval(autoplayTimer);
+        const startAutoplay = () => {
+          stopAutoplay();
+          if (!prefersReducedMotion && carouselIsVisible && !document.hidden && !carousel.matches(":hover") && !carousel.contains(document.activeElement)) {
+            autoplayTimer = window.setInterval(() => {
+              if (currentSlide === slides.length - 1) autoplayDirection = -1;
+              if (currentSlide === 0) autoplayDirection = 1;
+              showSlide(currentSlide + autoplayDirection);
+            }, 5200);
+          }
+        };
+
+        previousButton.addEventListener("click", () => { showSlide(currentSlide - 1); startAutoplay(); });
+        nextButton.addEventListener("click", () => { showSlide(currentSlide + 1); startAutoplay(); });
+        dots.forEach((dot, dotIndex) => dot.addEventListener("click", () => { showSlide(dotIndex); startAutoplay(); }));
+
+        carousel.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") { event.preventDefault(); showSlide(currentSlide - 1); }
+          if (event.key === "ArrowRight") { event.preventDefault(); showSlide(currentSlide + 1); }
+        });
+        viewport.addEventListener("pointerdown", (event) => { pointerStartX = event.clientX; stopAutoplay(); });
+        viewport.addEventListener("pointerup", (event) => {
+          if (pointerStartX !== null && Math.abs(event.clientX - pointerStartX) > 48) {
+            showSlide(currentSlide + (event.clientX < pointerStartX ? 1 : -1));
+          }
+          pointerStartX = null;
+          startAutoplay();
+        });
+        viewport.addEventListener("pointercancel", () => { pointerStartX = null; startAutoplay(); });
+        carousel.addEventListener("mouseenter", stopAutoplay);
+        carousel.addEventListener("mouseleave", startAutoplay);
+        carousel.addEventListener("focusin", stopAutoplay);
+        carousel.addEventListener("focusout", startAutoplay);
+        document.addEventListener("visibilitychange", startAutoplay);
+        window.addEventListener("resize", positionCarousel);
+
+        const carouselObserver = new IntersectionObserver((entries) => {
+          carouselIsVisible = entries[0].isIntersecting;
+          if (carouselIsVisible) startAutoplay();
+          else stopAutoplay();
+        }, { threshold: 0.35 });
+        carouselObserver.observe(carousel);
+        showSlide(0);
+      }
 
       const updateScrollEffects = () => {
         const scrollTop = window.scrollY;
