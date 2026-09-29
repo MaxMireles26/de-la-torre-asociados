@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
     <script>document.documentElement.classList.add("js");</script>
-    <link rel="stylesheet" href="style.css?v=20260927-1" />
+    <link rel="stylesheet" href="style.css?v=20260928-1" />
   </head>
   <body>
     <header class="site-header" aria-label="Navegación principal">
@@ -187,43 +187,28 @@
           </div>
 
           <div class="office-carousel reveal" role="region" aria-roledescription="carrusel" aria-label="Galería fotográfica del despacho" tabindex="0">
-            <div class="office-carousel__header">
-              <div>
-                <p class="office-carousel__eyebrow">El despacho</p>
-                <p class="office-carousel__description">Espacios pensados para conversar, analizar y construir soluciones con absoluta privacidad.</p>
-              </div>
-              <p class="office-carousel__counter" aria-hidden="true"><span data-carousel-current>01</span><i></i><span>07</span></p>
-            </div>
-
             <div class="office-carousel__viewport">
               <div class="office-carousel__track" data-carousel-track>
                 <figure class="office-slide is-active" data-carousel-slide>
                   <img src="assets/office-01.jpg?v=20260927-1" alt="Vestíbulo del despacho con escultura contemporánea y vista al jardín" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>01</span><p>Recepción y galería</p></figcaption>
                 </figure>
                 <figure class="office-slide" data-carousel-slide>
                   <img src="assets/office-02.jpg?v=20260927-1" alt="Sala de juntas del despacho iluminada por luz natural" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>02</span><p>Sala de juntas</p></figcaption>
                 </figure>
                 <figure class="office-slide" data-carousel-slide>
                   <img src="assets/office-03.jpg?v=20260927-1" alt="Área de atención privada con mobiliario y obras de arte" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>03</span><p>Área de atención</p></figcaption>
                 </figure>
                 <figure class="office-slide" data-carousel-slide>
                   <img src="assets/office-04.jpg?v=20260927-1" alt="Vestíbulo principal con escultura roja y acceso al jardín" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>04</span><p>Vestíbulo principal</p></figcaption>
                 </figure>
                 <figure class="office-slide" data-carousel-slide>
                   <img src="assets/office-05.jpg?v=20260927-1" alt="Mesa de reuniones del despacho con detalles escultóricos" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>05</span><p>Espacio de acuerdos</p></figcaption>
                 </figure>
                 <figure class="office-slide" data-carousel-slide>
                   <img src="assets/office-06.jpg?v=20260927-1" alt="Sala de juntas con mesa de madera y luz cálida" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>06</span><p>Sala de análisis</p></figcaption>
                 </figure>
                 <figure class="office-slide" data-carousel-slide>
                   <img src="assets/office-07.jpg?v=20260927-1" alt="Oficina privada del despacho con arte y piano" width="1200" height="1600" loading="lazy" decoding="async" />
-                  <figcaption><span>07</span><p>Oficina privada</p></figcaption>
                 </figure>
               </div>
             </div>
@@ -250,8 +235,8 @@
             <div class="address-card reveal">
               <i class="address-card__icon" data-lucide="map-pin" aria-hidden="true"></i>
               <p class="address-card__label">Dirección</p>
-              <address>C. Heroico Colegio Militar 1164<br />Guadalajara, Jalisco</address>
-              <a href="https://maps.app.goo.gl/Bruk7CXNNu3WSdyp6" target="_blank" rel="noopener noreferrer">
+              <address>C. Miguel Lerdo de Tejada 1904<br />Col Americana, Americana<br />44150 Guadalajara, Jal.</address>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=C.%20Miguel%20Lerdo%20de%20Tejada%201904%2C%20Col%20Americana%2C%20Americana%2C%2044150%20Guadalajara%2C%20Jal." target="_blank" rel="noopener noreferrer">
                 Abrir indicaciones <i data-lucide="arrow-up-right" aria-hidden="true"></i>
               </a>
             </div>
@@ -259,7 +244,7 @@
             <div class="map-frame reveal reveal--delay">
               <iframe
                 title="Ubicación de Hernández De La Torre y Asociados en Google Maps"
-                src="https://www.google.com/maps?q=C.%20Heroico%20Colegio%20Militar%201164%2C%20Guadalajara%2C%20Jalisco&output=embed"
+                src="https://www.google.com/maps?q=C.%20Miguel%20Lerdo%20de%20Tejada%201904%2C%20Col%20Americana%2C%20Americana%2C%2044150%20Guadalajara%2C%20Jal.&amp;output=embed"
                 loading="lazy"
                 allowfullscreen
                 referrerpolicy="no-referrer-when-downgrade"
@@ -385,7 +370,6 @@
         const viewport = carousel.querySelector(".office-carousel__viewport");
         const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
         const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
-        const currentLabel = carousel.querySelector("[data-carousel-current]");
         const progress = carousel.querySelector("[data-carousel-progress]");
         const previousButton = carousel.querySelector("[data-carousel-prev]");
         const nextButton = carousel.querySelector("[data-carousel-next]");
@@ -405,7 +389,7 @@
         };
 
         const showSlide = (index) => {
-          currentSlide = (index + slides.length) % slides.length;
+          currentSlide = Math.max(0, Math.min(index, slides.length - 1));
           slides.forEach((slide, slideIndex) => slide.classList.toggle("is-active", slideIndex === currentSlide));
           dots.forEach((dot, dotIndex) => {
             const isCurrent = dotIndex === currentSlide;
@@ -413,7 +397,8 @@
             if (isCurrent) dot.setAttribute("aria-current", "true");
             else dot.removeAttribute("aria-current");
           });
-          currentLabel.textContent = String(currentSlide + 1).padStart(2, "0");
+          previousButton.disabled = currentSlide === 0;
+          nextButton.disabled = currentSlide === slides.length - 1;
           progress.style.transform = `scaleX(${(currentSlide + 1) / slides.length})`;
           positionCarousel();
         };
@@ -426,7 +411,7 @@
               if (currentSlide === slides.length - 1) autoplayDirection = -1;
               if (currentSlide === 0) autoplayDirection = 1;
               showSlide(currentSlide + autoplayDirection);
-            }, 5200);
+            }, 6500);
           }
         };
 
@@ -438,7 +423,12 @@
           if (event.key === "ArrowLeft") { event.preventDefault(); showSlide(currentSlide - 1); }
           if (event.key === "ArrowRight") { event.preventDefault(); showSlide(currentSlide + 1); }
         });
-        viewport.addEventListener("pointerdown", (event) => { pointerStartX = event.clientX; stopAutoplay(); });
+        viewport.addEventListener("pointerdown", (event) => {
+          if (!event.isPrimary || event.button !== 0) return;
+          pointerStartX = event.clientX;
+          viewport.setPointerCapture(event.pointerId);
+          stopAutoplay();
+        });
         viewport.addEventListener("pointerup", (event) => {
           if (pointerStartX !== null && Math.abs(event.clientX - pointerStartX) > 48) {
             showSlide(currentSlide + (event.clientX < pointerStartX ? 1 : -1));
@@ -450,13 +440,16 @@
         carousel.addEventListener("mouseenter", stopAutoplay);
         carousel.addEventListener("mouseleave", startAutoplay);
         carousel.addEventListener("focusin", stopAutoplay);
-        carousel.addEventListener("focusout", startAutoplay);
+        carousel.addEventListener("focusout", () => window.setTimeout(startAutoplay, 0));
         document.addEventListener("visibilitychange", startAutoplay);
-        window.addEventListener("resize", positionCarousel);
+        new ResizeObserver(positionCarousel).observe(viewport);
 
         const carouselObserver = new IntersectionObserver((entries) => {
           carouselIsVisible = entries[0].isIntersecting;
-          if (carouselIsVisible) startAutoplay();
+          if (carouselIsVisible) {
+            slides.forEach((slide) => { slide.querySelector("img").loading = "eager"; });
+            startAutoplay();
+          }
           else stopAutoplay();
         }, { threshold: 0.35 });
         carouselObserver.observe(carousel);
